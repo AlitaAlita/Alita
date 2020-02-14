@@ -65,6 +65,7 @@ public class LogAspect {
             this.ip=ip;
             this.className= className;
             this.args =args;
+
         }
 
         @Override
