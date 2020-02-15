@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <title>博客详情页</title>
+</head>
+<body>
+<!--导航-->
+<nav class="ui inverted attached segment m-padded-tb-mini">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="item"><i class="home icon"></i>首页</a>
+            <a href="#" class="item"><i class="idea icon"></i>分类</a>
+            <a href="#" class="item"><i class="tags icon"></i>标签</a>
+            <a href="#" class="item"><i class="clone icon"></i>归档</a>
+            <a href="#" class="item"><i class="info icon"></i>关于我</a>
+            <div class="right  item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="search">
+                    <i class="search  link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</nav>
+<!--中间内容-->
+<div class="m-padded-tb-massive m-container-small">
+    <div class="ui  container">
+      <div class="ui top attached segment">
+          <div class="ui horizontal link list">
+              <div class="ui item">
+                  <img src="https://i.picsum.photos/id/10/100/100.jpg" alt="" class="ui avatar image">
+                  <div class="content">
+                      <a class="header">人间</a>
+                  </div>
+              </div>
+              <div class="ui item">
+                  <i class="calendar icon"></i>2020-02-13
+              </div>
+              <div class="ui item">
+                  <i class="eye icon"></i>222
+              </div>
+
+          </div>
+      </div>
+        <div class="ui attached segment">
+        <!--图片-->
+            <img src="https://i.picsum.photos/id/10/800/450.jpg" alt="" class="fluid rounded image">
+        </div>
+        <div class="ui attached segment">
+        <!--内-->
+            <div class="ui right aligned basic segment">
+                <div class="ui label orange basic">原创</div>
+            </div>
+            <h2 class="ui  centered header">关于刻意学习的清单</h2>
+            <div id="content">文章内容</div>
+            <div>
+                <a href="#" target="_blank" class="ui teal basic  left pointing label m-margin-tb-tiny m-margin-lr-tiny">
+                    论 <div class="ui detail">13</div>
+                </a>
+            </div>
+            <!--赞赏-->
+            <div class="ui center aligned basic segment">
+                <button id="payButton"class="ui  orange basic circular button">赞赏</button>
+            </div>
+            <div class="ui payQR flowing popup  transition hidden">
+                <div class="ui orange basic label">
+                    <div class="ui  image">
+                        <img src="../static/image/wechat.jpg" class="ui rounded bordered image" style="width:120px ">
+                        <div>支付宝支付</div>
+                    </div>
+                    <div class="ui image">
+                        <img src="../static/image/wechat.jpg" class="ui rounded bordered image" style="width:120px ">
+                        <div>微信支付</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="ui  attached positive message">
+        <!--博客信息-->
+            <div class="ui middle aligned grid">
+                <div class="ui eleven wide column">
+                    <ui class="list">
+                        <li>作者：人间（联系作者）</li>
+                        <li>发表时间：2020-02-13 16:02:59</li>
+                        <li>作者：人间（联系作者）</li>
+                        <li>作者：人间（联系作者）</li>
+                    </ui>
+                </div>
+                <div class="ui five wide column">
+                    <img src="../static/image/wechat.jpg" alt="" class="ui right floated rounded bordered image" style="width: 100px">
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached segment">
+            <!-- 言区域-->
+            <div class="ui teal segment">
+                <div class="ui comments">
+                    <h3 class="ui dividing header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">评论</font></font></h3>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://i.picsum.photos/id/10/100/100.jpg">
+                        </a>
+                        <div class="content">
+                            <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">马特</font></font></a>
+                            <div class="metadata">
+                                <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">今天下午5:42</font></font></span>
+                            </div>
+                            <div class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                多么艺术！
+                            </font></font></div>
+                            <div class="actions">
+                                <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://i.picsum.photos/id/10/100/100.jpg">
+                        </a>
+                        <div class="content">
+                            <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">傅lio</font></font></a>
+                            <div class="metadata">
+                                <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">昨天上午12:30</font></font></span>
+                            </div>
+                            <div class="text">
+                                <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这对我的研究非常有用。</font><font style="vertical-align: inherit;">也谢谢！</font></font></p>
+                            </div>
+                            <div class="actions">
+                                <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                            </div>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <a class="avatar">
+                                    <img src="https://i.picsum.photos/id/10/100/100.jpg">
+                                </a>
+                                <div class="content">
+                                    <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">珍妮·赫斯（Jenny Hess）</font></font></a>
+                                    <div class="metadata">
+                                        <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现在</font></font></span>
+                                    </div>
+                                    <div class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                        艾略特，你总是很正确:)
+                                    </font></font></div>
+                                    <div class="actions">
+                                        <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://i.picsum.photos/id/10/100/100.jpg">
+                        </a>
+                        <div class="content">
+                            <a class="author"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">乔·亨德森</font></font></a>
+                            <div class="metadata">
+                                <span class="date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5天前</font></font></span>
+                            </div>
+                            <div class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                杜德，太棒了。</font><font style="vertical-align: inherit;">非常感谢
+                            </font></font></div>
+                            <div class="actions">
+                                <a class="reply"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <textarea name="content" placeholder="请输入评论信息....."></textarea>
+                    <div class="fields">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickname" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="text" name="nickname" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <button class="ui teal button"><i class="ui edit icon"></i>发布</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+<!--底部-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/image/wechat.jpg" class="ui rounded image" alt="" style="width: 120px">
+                    </div>
+                </div>
+
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item link">最新故事(Story)</a>
+                    <a href="#" class="item link">每日分享</a>
+                    <a href="#" class="item link">小清新</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item link">邮箱：23418702@qq.com</a>
+                    <a href="#" class="item link">QQ:23418702</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">简介</h4>
+                <p class="m-text-lined m-text-spaced m-text-lined m-opacity-mini">
+                    这是我的一个博客，分享了我的一些代码、学习心得、日记等
+                </p>
+            </div>
+        </div>
+        <div class="ui inverted section divider m-padded-tb-large  ">
+            <p class="m-text-lined m-text-spaced m-text-lined m-opacity-mini m-padded-tb-large">
+                制作
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+<script>
+    $("#payButton").popup({
+        popup : $(".payQR.popup"),
+        on: 'click',
+        position: 'bottom center'
+    });
+</script>
+</body>
+</html>
