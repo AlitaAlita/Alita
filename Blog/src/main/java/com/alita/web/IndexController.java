@@ -1,8 +1,8 @@
 package com.alita.web;
 
-import com.alita.NotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @Author: Alita 1650810671@qq.com
@@ -16,11 +16,12 @@ public class IndexController {
     public String index()
     {
         //int i=4/0;
-        String blog=null;
-        if(blog == null)
-        {
-            throw new NotFoundException("blog not found");
-        }
+//        String blog=null;
+//        if(blog == null)
+//        {
+//            throw new NotFoundException("blog not found");
+//        }
+//        System.out.println("--------index-------");
         return "index";
     }
 }
