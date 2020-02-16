@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="t_blog")
+@Table(name = "t_blog")
 public class Blog {
     @Id
     @GeneratedValue
@@ -23,9 +23,9 @@ public class Blog {
     private boolean published;
     private boolean recommend;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date    createTime;
+    private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date    updateTime;
+    private Date updateTime;
 
     @ManyToOne
     private Type type;
@@ -38,7 +38,7 @@ public class Blog {
     @OneToMany(mappedBy = "blog")
     private List<Comment> comments = new ArrayList<>();
 
-    public Blog(){
+    public Blog() {
 
     }
 
