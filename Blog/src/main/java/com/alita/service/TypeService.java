@@ -10,6 +10,8 @@ public interface TypeService {
 
     public Type getType(Long id);
 
+    public Type getTypeByName(String name);
+
     public Page<Type> listType(Pageable pageable);
 
     public Type updateType(Long id,Type type);
