@@ -4,15 +4,21 @@ import com.alita.po.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 public interface TypeService {
 
-     Type saveType(Type type);
+    public Type saveType(Type type);
 
-     Type getType(Long id);
+    public Type getType(Long id);
 
-     Page<Type> listType(Pageable pageable);
+    public Type getTypeByName(String name);
 
-     Type updateType(Long id,Type type);
+    public Page<Type> listType(Pageable pageable);
 
-     void deleteType(Long id);
+    public Type updateType(Long id,Type type);
+
+    public void deleteType(Long id);
+
+    public List<Type> listTypeTop(Integer size);
 }

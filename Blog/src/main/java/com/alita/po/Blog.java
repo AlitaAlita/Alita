@@ -17,6 +17,7 @@ public class Blog {
     private String firstPicture;
     private String flags;
     private Integer views;
+    private String desciption;
     private boolean appreciation;
     private boolean shareStatement;
     private boolean commentabled;
@@ -178,6 +179,14 @@ public class Blog {
         this.type = type;
     }
 
+    public String getDesciption() {
+        return desciption;
+    }
+
+    public void setDesciption(String desciption) {
+        this.desciption = desciption;
+    }
+
     @Override
     public String toString() {
         return "Blog{" +
@@ -187,6 +196,7 @@ public class Blog {
                 ", firstPicture='" + firstPicture + '\'' +
                 ", flags='" + flags + '\'' +
                 ", views=" + views +
+                ", desciption='" + desciption + '\'' +
                 ", appreciation=" + appreciation +
                 ", shareStatement=" + shareStatement +
                 ", commentabled=" + commentabled +
@@ -194,6 +204,10 @@ public class Blog {
                 ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", user=" + user +
+                ", comments=" + comments +
                 '}';
     }
 }
