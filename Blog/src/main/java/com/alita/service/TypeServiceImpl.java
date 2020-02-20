@@ -55,5 +55,4 @@ public class TypeServiceImpl implements TypeService{
     @Override
     public void deleteType(Long id) {
         typeRepository.deleteById(id);
-    }
-}
+    }}
