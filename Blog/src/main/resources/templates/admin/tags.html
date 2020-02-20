@@ -3,7 +3,7 @@
 <head th:replace="_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>博客管理</title>
+  <title>标签管理</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../../static/css/me.css">
 </head>
@@ -15,8 +15,8 @@
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">管理后台</h2>
         <a href="#" class=" m-item item m-mobile-hide" th:href="@{/admin/blogs}"><i class="mini home icon"></i>博客</a>
-        <a href="#" class="active m-item item m-mobile-hide" th:href="@{/admin/types}"><i class="mini idea icon"></i>分类</a>
-        <a href="#" class="m-item item m-mobile-hide" th:href="@{/admin/tags}"><i class="mini tags icon"></i>标签</a>
+        <a href="#" class=" m-item item m-mobile-hide" th:href="@{/admin/types}"><i class="mini idea icon"></i>分类</a>
+        <a href="#" class=" active m-item item m-mobile-hide" th:href="@{/admin/tags}"><i class="mini tags icon"></i>标签</a>
         <div class="right m-item m-mobile-hide menu">
           <div class="ui dropdown  item">
             <div class="text">
@@ -38,8 +38,8 @@
   <div class="ui attached pointing menu">
     <div class="ui container">
       <div class="right menu">
-        <a href="#" class="item">发布</a>
-        <a href="#" class="teal active item">列表</a>
+        <a href="#" th:href="@{/admin/tags/input}"class=" item">发布</a>
+        <a href="#" th:href="@{/admin/tags}"class="teal active item">列表</a>
       </div>
     </div>
   </div>
@@ -47,6 +47,11 @@
   <!--中间内容-->
   <div  class="m-container-small m-padded-tb-big">
     <div class="ui container">
+      <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+        <i class="close icon"></i>
+        <div class="header">提示：</div>
+        <p th:text="${message}">标签添加成功！</p>
+      </div>
       <table class="ui celled table">
         <thead>
           <tr>
@@ -56,12 +61,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr th:each="type,iterStat: ${page.content}">
+          <tr th:each="tag,iterStat: ${page.content}">
             <td th:text="${iterStat.count}">1</td>
-            <td th:text="${type.name}">刻意练习清单</td>
+            <td th:text="${tag.name}">刻意练习清单</td>
             <td>
-              <a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal basic button">编辑</a>
-              <a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red basic button">删除</a>
+              <a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui mini teal basic button">编辑</a>
+              <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
             </td>
           </tr>
         </tbody>
@@ -72,7 +77,7 @@
                 <a th:href="@{/admin/types(page=${page.number-1})}" class=" item" th:unless="${page.first}">上一页</a>
                 <a th:href="@{/admin/types(page=${page.number+1})}" class=" item" th:unless="${page.last}">下一页</a>
               </div>
-              <a href="#" th:href="@{/admin/types/input}" class="ui mini right floated teal basic button">新增</a>
+              <a href="#" th:href="@{/admin/tags/input}" class="ui mini right floated teal basic button">新增</a>
             </th>
           </tr>
         </tfoot>
@@ -82,6 +87,28 @@
 
   <br>
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
   <!--底部footer-->
   <footer class="ui inverted vertical segment m-padded-tb-massive">
     <div class="ui center aligned container">
@@ -129,6 +156,23 @@
 
     $('.ui.dropdown').dropdown({
       on : 'hover'
+    });
+    $(".message .close").on("click",function(){
+      $(this)
+              .closest(".message")
+              .transition("fade");
+    });
+
+    $('.ui.form').form({
+      fields : {
+        title : {
+          identifier: 'name',
+          rules: [{
+            type : 'empty',
+            prompt: '名称：请输入标签名称'
+          }]
+        }
+      }
     });
 
   </script>

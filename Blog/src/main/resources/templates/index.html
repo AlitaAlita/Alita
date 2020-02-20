@@ -54,7 +54,7 @@
                 <div class="ui attached  segment">
 
                     <div class="ui padded vertical segment m-padded-tb-large">
-                        <div class="ui mobile reversed stackable grid">
+                        <div class="ui middle aligned mobile reversed stackable grid">
                             <div class="eleven wide column">
                                 <h3 class="ui header">你真的理解什么是财富自由吗？</h3>
                                 <p class="m-text">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
@@ -427,31 +427,31 @@
                         </div>
                     </div>
                     <div class="ui teal segment">
-                        <div class="ui fluid vertical menu">
-                            <a href="#" class="item">
-                                学习日志
-                                <div class="ui teal basic left pointing label">13</div>
+                        <div class="ui fluid vertical menu" >
+                            <a href="#" class="item" th:each="type : ${types}">
+                                <span th:text="${type.name}">学习日志</span>
+                                <div class="ui teal basic left pointing label" th:text="${#arrays.length(type.blogs)}">13</div>
                             </a>
-                            <a href="#" class="item">
-                                思考与感悟
-                                <div class="ui teal basic left pointing label">13</div>
-                            </a>
-                            <a href="#" class="item">
-                                学习日志
-                                <div class="ui teal basic left pointing label">13</div>
-                            </a>
-                            <a href="#" class="item">
-                                学习日志
-                                <div class="ui teal basic left pointing label">13</div>
-                            </a>
-                            <a href="#" class="item">
-                                学习日志
-                                <div class="ui teal basic left pointing label">13</div>
-                            </a>
-                            <a href="#" class="item">
-                                学习日志
-                                <div class="ui teal basic left pointing label">13</div>
-                            </a>
+<!--                            <a href="#" class="item">-->
+<!--                                思考与感悟-->
+<!--                                <div class="ui teal basic left pointing label">13</div>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="item">-->
+<!--                                学习日志-->
+<!--                                <div class="ui teal basic left pointing label">13</div>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="item">-->
+<!--                                学习日志-->
+<!--                                <div class="ui teal basic left pointing label">13</div>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="item">-->
+<!--                                学习日志-->
+<!--                                <div class="ui teal basic left pointing label">13</div>-->
+<!--                            </a>-->
+<!--                            <a href="#" class="item">-->
+<!--                                学习日志-->
+<!--                                <div class="ui teal basic left pointing label">13</div>-->
+<!--                            </a>-->
                         </div>
                     </div>
                 </div>
@@ -469,36 +469,36 @@
                         </div>
                     </div>
                     <div class="ui teal segment">
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
+                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+                            <span th:text="${tag.name}">方法论</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
                         </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
-                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-                            方法论 <div class="detail">23</div>
-                        </a>
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">-->
+<!--                            方法论 <div class="detail">23</div>-->
+<!--                        </a>-->
                     </div>
                 </div>
 
