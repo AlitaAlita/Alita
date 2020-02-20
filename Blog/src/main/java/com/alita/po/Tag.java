@@ -1,6 +1,7 @@
 package com.alita.po;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,8 @@ import java.util.List;
 public class Tag {
     @Id
     @GeneratedValue
-    private long   id;
+    private Long  id;
+    @NotBlank(message="分类名称不能为空！")
     private String name;
 
     @ManyToMany(mappedBy = "tags")
@@ -26,7 +28,7 @@ public class Tag {
         this.blogs = blogs;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -34,7 +36,7 @@ public class Tag {
         return name;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

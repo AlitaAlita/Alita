@@ -28,6 +28,8 @@ public class TypeServiceImpl implements TypeService{
         return typeRepository.findById(id).orElse(null);
     }
 
+
+
     @Transactional
     @Override
     public Page<Type> listType(Pageable pageable) {
@@ -43,6 +45,10 @@ public class TypeServiceImpl implements TypeService{
         }
         BeanUtils.copyProperties(type,t);
         return typeRepository.save(t);
+    }
+    @Override
+    public Type getTypeByName(String name) {
+        return typeRepository.findByName(name);
     }
 
     @Transactional
