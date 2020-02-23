@@ -15,6 +15,7 @@ public interface TypeService {
     public Type getTypeByName(String name);
 
     public Page<Type> listType(Pageable pageable);
+    List<Type> listType();
 
     public Type updateType(Long id,Type type);
 
