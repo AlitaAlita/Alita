@@ -1,5 +1,6 @@
 package com.alita.web;
 
+import com.alita.service.BlogServiceImpl;
 import com.alita.service.TagServiceImpl;
 import com.alita.service.TypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +27,15 @@ public class IndexController {
     @Autowired
     private TagServiceImpl tagService;
 
+    @Autowired
+    private BlogServiceImpl blogService;
+
     @GetMapping("/")
     public String index(@PageableDefault(size=8,sort={"updateTime"},direction = Sort.Direction.DESC) Pageable pageable, Model model) {
-
+        model.addAttribute("page",blogService.listBlog(pageable));
         model.addAttribute("types",typeService.listTypeTop(6));
         model.addAttribute("tags",typeService.listTypeTop(10));
+        model.addAttribute("recommend",blogService.listRecommendBlogTop(8));
         return "/index";
     }
 }
