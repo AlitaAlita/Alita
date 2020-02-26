@@ -46,27 +46,27 @@
             <div class="content"><a href="#" class="header">Alita</a></div>
           </div>
           <div class="item">
-            <i class="calendar icon"></i> 2020-2-15
+            <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-2-15</span>
           </div>
           <div class="item">
-            <i class="eye icon"></i> 2342
+            <i class="eye icon"></i> <span th:text="${blog.views}">2342</span>
           </div>
         </div>
       </div>
       <div class="ui attached segment">
         <!--图片区域-->
-         <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui fluid rounded image">
+         <img src="../static/images/wechat.jpg" th:src="@{${blog.firstPicture}}" alt="" class="ui fluid rounded image">
       </div>
       <div class="ui  attached padded segment">
         <!--内容-->
         <div class="ui right aligned basic segment">
-          <div class="ui orange basic label">原创</div>
+          <div class="ui orange basic label" th:text="${blog.flag}">原创</div>
         </div>
 
-        <h2 class="ui center aligned header">关于刻意练习的清单</h2>
+        <h2 class="ui center aligned header" th:text="${blog.title}">关于刻意练习的清单</h2>
         <br>
 
-        <div id="content" class="typo  typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large">
+        <div id="content" class="typo  typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large" th:utext="${blog.content}">
 
           <h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
 
@@ -431,7 +431,7 @@ h5,h6{font-size:1em;}
 
         <!--标签-->
         <div class="m-padded-lr-responsive">
-          <div class="ui basic teal left pointing label">方法论</div>
+          <div class="ui basic teal left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</div>
         </div>
 
         <!--赞赏-->
@@ -459,8 +459,8 @@ h5,h6{font-size:1em;}
         <div class="ui middle aligned grid">
           <div class="eleven wide column">
             <ui class="list">
-              <li>作者：Alita（联系作者）</li>
-              <li>发表时间：2020-2-15 10:00</li>
+              <li>作者：<span >Alita</span><a href="#" th:href=@{/about} target="_blank">（联系作者）</a></li>
+              <li>发表时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020-2-15 10:00</span></li>
               <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
               <li>公众号转载：请在文末添加作者公众号二维码</li>
             </ui>

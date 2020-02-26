@@ -14,14 +14,7 @@ import org.commonmark.renderer.html.HtmlRenderer;
 
 import java.util.*;
 
-/**
- * @Author: Alita 1650810671@qq.com
- * @Description:
- * @Date: Created in 16:11 2020/2/26
- * @Modified By:
- */
 public class MarkdownUtils {
-
     /**
      * markdown格式转换成HTML格式
      * @param markdown
@@ -87,4 +80,5 @@ public class MarkdownUtils {
         String a = "[imCoding 爱编程](http://www.lirenmi.cn)";
         System.out.println(markdownToHtmlExtensions(a));
     }
+
 }

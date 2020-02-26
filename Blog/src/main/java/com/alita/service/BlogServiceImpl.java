@@ -4,6 +4,7 @@ import com.alita.NotFoundException;
 import com.alita.dao.BlogRepository;
 import com.alita.po.Blog;
 import com.alita.po.Type;
+import com.alita.util.MarkdownUtils;
 import com.alita.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,19 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog getBlog(Long id) {
         return blogRepository.findById(id).get();
+    }
+
+    @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog =blogRepository.findById(id).get();
+        if(blog==null){
+            throw new NotFoundException("博客不存在！");
+        }
+        Blog b =new Blog();
+        BeanUtils.copyProperties(blog,b);
+        String content = b.getContent();
+        b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+        return b;
     }
 
     @Override
