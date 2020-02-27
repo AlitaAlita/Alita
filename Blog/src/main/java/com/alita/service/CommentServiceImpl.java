@@ -20,14 +20,16 @@ import java.util.List;
  */
 @Service
 public class CommentServiceImpl implements CommentService {
+
+
     @Autowired
     private CommentRepository commentRepository;
 
 
     @Override
     public List<Comment> listCommentByBlogId(Long blogId) {
-        Sort sort = Sort.by(Sort.Direction.DESC, "createTime");
-        List<Comment> comments = commentRepository.findByBlogIdAndParentCommentNot(blogId, sort);
+        Sort sort = Sort.by( "createTime");
+        List<Comment> comments = commentRepository.findByBlogIdAndParentCommentNull(blogId, sort);
         return eachComment(comments);
     }
 
