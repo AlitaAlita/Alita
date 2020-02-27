@@ -38,4 +38,9 @@ public class IndexController {
         model.addAttribute("recommend",blogService.listRecommendBlogTop(8));
         return "/index";
     }
+
+    @GetMapping("/blog")
+    public String blog(){
+        return "blog";
+    }
 }
