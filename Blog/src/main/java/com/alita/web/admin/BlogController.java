@@ -31,6 +31,11 @@ public class BlogController {
     private static final String INPUT = "admin/blogs-input";
     private static final String LIST = "admin/blogs";
     private static final String REDIRECT_LIST = "redirect:/admin/blogs";
+//
+//    @GetMapping("/blogs")
+//    public String list(){
+//        return "admin/blogs";
+//    }
 
 
     @Autowired
@@ -79,6 +84,5 @@ public class BlogController {
         return REDIRECT_LIST;
 
     }
-
 
 }

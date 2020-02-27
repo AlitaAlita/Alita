@@ -3,19 +3,7 @@ package com.alita.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * @Author: Alita 1650810671@qq.com
- * @Description:
- * @Date: Created in 16:11 2020/2/26
- * @Modified By:
- */
 public class MD5Utils {
-
-    /**
-     * MD5加密类
-     * @param str 要加密的字符串
-     * @return    加密后的字符串
-     */
     public static String code(String str){
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
