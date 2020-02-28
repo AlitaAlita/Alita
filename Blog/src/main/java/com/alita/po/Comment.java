@@ -4,17 +4,24 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+/**
+ * @Author: Alita 1650810671@qq.com
+ * @Description:
+ * @Date: Created in 16:23 2020/2/26
+ * @Modified By:
+ */
 
 @Entity
-@Table(name="t_comment")
+@Table(name = "t_comment")
 public class Comment {
+
     @Id
     @GeneratedValue
-    private Long    id;
-    private String nickName;
+    private Long id;
+    private String nickname;
     private String email;
-    private String  content;
-    private String  avatar;
+    private String content;
+    private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
 
@@ -27,7 +34,65 @@ public class Comment {
     @ManyToOne
     private Comment parentComment;
 
+    private boolean adminComment;
+
     public Comment() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Blog getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
     }
 
     public List<Comment> getReplyComments() {
@@ -46,71 +111,27 @@ public class Comment {
         this.parentComment = parentComment;
     }
 
-    public Blog getBlog() {
-        return blog;
+    public boolean isAdminComment() {
+        return adminComment;
     }
 
-    public void setBlog(Blog blog) {
-        this.blog = blog;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setAdminComment(boolean adminComment) {
+        this.adminComment = adminComment;
     }
 
     @Override
     public String toString() {
         return "Comment{" +
                 "id=" + id +
-                ", nickName='" + nickName + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", email='" + email + '\'' +
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", createTime=" + createTime +
+                ", blog=" + blog +
+                ", replyComments=" + replyComments +
+                ", parentComment=" + parentComment +
+                ", adminComment=" + adminComment +
                 '}';
     }
 }
