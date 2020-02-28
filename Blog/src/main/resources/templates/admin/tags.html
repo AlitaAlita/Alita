@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="_fragments :: head(~{::title})">
+<head th:replace="admin/_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>标签管理</title>
@@ -9,8 +9,8 @@
 </head>
 <body>
 
-  <!--导航-->
-  <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+<!--导航-->
+<nav th:replace="admin/_fragments :: menu(3)"  class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
     <div class="ui container">
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">管理后台</h2>
@@ -34,7 +34,7 @@
     <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
       <i class="sidebar icon"></i>
     </a>
-  </nav>
+</nav>
   <div class="ui attached pointing menu">
     <div class="ui container">
       <div class="right menu">
