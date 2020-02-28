@@ -42,7 +42,7 @@
     <div class="ui container">
       <div class="ui success large  message">
         <h3>Hi,</h3>
-        <p>Alita，欢迎登录！</p>
+        <p><span th:text="${session.user.nickname}">Alita</span>，欢迎登录！</p>
       </div>
 
       <img src="https://picsum.photos/200" alt="" class="ui rounded bordered fluid image">
