@@ -60,7 +60,7 @@ public class TypeController {
         return "/admin/type-input";
     }
 
-    @PostMapping("/save/{id}")
+    @PostMapping("/types/{id}")
     public String editType(@PathVariable  Long id,Type type,BindingResult bindingResult,RedirectAttributes attributes){
         if(typeService.getTypeByName(type.getName()) !=null){
             bindingResult.rejectValue("name","nameErrors","改分类已存在，请勿重复添加！");
