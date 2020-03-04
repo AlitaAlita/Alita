@@ -1,5 +1,8 @@
 package com.alita.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,13 +36,16 @@ public class Blog {
     private Date updateTime;
 
     @ManyToOne
+    @JsonIgnore
     private Type type;
 
     @ManyToMany(cascade = {CascadeType.PERSIST})
+    @JsonIgnore
     private List<Tag> tags = new ArrayList<>();
 
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     @OneToMany(mappedBy = "blog")
@@ -140,7 +146,7 @@ public class Blog {
     public void setRecommend(boolean recommend) {
         this.recommend = recommend;
     }
-
+    @JsonFormat(pattern = "yyyy-MM-dd ")
     public Date getCreateTime() {
         return createTime;
     }
@@ -149,6 +155,7 @@ public class Blog {
         this.createTime = createTime;
     }
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     public Date getUpdateTime() {
         return updateTime;
     }
