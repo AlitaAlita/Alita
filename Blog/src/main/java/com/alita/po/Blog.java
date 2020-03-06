@@ -2,13 +2,14 @@ package com.alita.po;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+@JsonIgnoreProperties(value={"comments"})
 @Entity
 @Table(name = "t_blog")
 public class Blog {
