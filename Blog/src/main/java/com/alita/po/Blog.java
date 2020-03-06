@@ -2,6 +2,7 @@ package com.alita.po;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -36,16 +37,16 @@ public class Blog {
     private Date updateTime;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonIgnoreProperties({"blogs"})
     private Type type;
 
     @ManyToMany(cascade = {CascadeType.PERSIST})
-    @JsonIgnore
+    @JsonIgnoreProperties({"blogs"})
     private List<Tag> tags = new ArrayList<>();
 
 
     @ManyToOne
-    @JsonIgnore
+    @JsonIgnoreProperties({"blogs"})
     private User user;
 
     @OneToMany(mappedBy = "blog")

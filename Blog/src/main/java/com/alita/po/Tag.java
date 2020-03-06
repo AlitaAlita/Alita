@@ -1,5 +1,7 @@
 package com.alita.po;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ public class Tag {
     @NotBlank(message="分类名称不能为空！")
     private String name;
 
+    @JsonIgnoreProperties({"tags"})
     @ManyToMany(mappedBy = "tags")
     private List<Blog> blogs = new ArrayList<>();
 
