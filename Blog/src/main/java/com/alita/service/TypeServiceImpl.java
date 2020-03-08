@@ -24,6 +24,15 @@ public class TypeServiceImpl implements TypeService{
     @Transactional
     @Override
     public Type saveType(Type type) {
+        type.setCount(type.getBlogs().size());
+        return typeRepository.save(type);
+    }
+
+    @Transactional
+    @Override
+    public Type getCount(Type type,Long id) {
+        Type t= typeRepository.findById(id).orElse(null);
+        type.setCount(type.getBlogs().size());
         return typeRepository.save(type);
     }
 

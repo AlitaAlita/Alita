@@ -24,6 +24,8 @@ public class TypeController {
     @Autowired
     private TypeServiceImpl typeService;
 
+    private int count;
+
     @GetMapping("/types")
     public String types(@PageableDefault(size = 10, sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable, Model model){
 
@@ -46,6 +48,7 @@ public class TypeController {
             return "/admin/type-input";
         }
         Type t=typeService.saveType(type);
+        
         if(t==null){
             attributes.addFlashAttribute("message","分类添加失败！" );
         }else{
@@ -69,6 +72,7 @@ public class TypeController {
             return "/admin/type-input";
         }
         Type t=typeService.updateType(id,type);
+
         if(t==null){
             attributes.addFlashAttribute("message","分类更新失败！" );
         }else{

@@ -16,6 +16,14 @@ public class Type {
 
     @OneToMany(mappedBy = "type")
     private List<Blog> blogs = new ArrayList<>();
+    private int count;
+
+    public int getCount() {
+        return count;
+    }
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public Type() {
     }

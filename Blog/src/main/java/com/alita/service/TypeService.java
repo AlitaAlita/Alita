@@ -10,6 +10,8 @@ public interface TypeService {
 
     public Type saveType(Type type);
 
+    Type getCount(Type type,Long id);
+
     public Type getType(Long id);
 
     public Type getTypeByName(String name);
