@@ -37,16 +37,16 @@ public class Blog {
     private Date updateTime;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonIgnoreProperties({"blogs"})
     private Type type;
 
     @ManyToMany(cascade = {CascadeType.PERSIST})
-    @JsonIgnore
+    @JsonIgnoreProperties({"blogs"})
     private List<Tag> tags = new ArrayList<>();
 
 
     @ManyToOne
-    @JsonIgnore
+    @JsonIgnoreProperties({"blogs"})
     private User user;
 
     @OneToMany(mappedBy = "blog")

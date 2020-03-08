@@ -1,5 +1,7 @@
 package com.alita.po;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,6 +26,7 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user")
     private List<Blog> blogs = new ArrayList<>();
 
