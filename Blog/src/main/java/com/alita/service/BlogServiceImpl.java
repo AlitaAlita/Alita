@@ -113,7 +113,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog saveBlog(Blog blog) {
         if(blog.getId()==null){
-            blog.setViews(0);
+            blog.setViews("0");
             blog.setCreateTime(new Date());
             blog.setUpdateTime(new Date());
         }else{
