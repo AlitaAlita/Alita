@@ -66,4 +66,12 @@ public class ApiBlogController {
         return new JsonResult(200,"success",blog);
     }
 
+    @PostMapping("/search")
+    public JsonResult search(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
+                             @RequestParam String query) {
+        System.out.println(query);
+        Page<Blog> blogs = blogService.listBlog("%"+query+"%", pageable);
+        return new JsonResult(200,"success",blogs);
+    }
+
 }
