@@ -1,5 +1,6 @@
 package com.alita.web.api;
 import com.alita.model.JsonResult;
+import com.alita.po.Blog;
 import com.alita.po.Tag;
 import com.alita.po.Type;
 import com.alita.service.BlogService;
@@ -31,21 +32,7 @@ public class ApiTypeShowController {
     @Autowired
     private BlogService blogService;
 
-    //    @GetMapping("/types/{id}")
-//    public String types(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
-//                        @PathVariable Long id, Model model) {
-//        List<Type> types = typeService.listTypeTop(10000);
-//        if (id == -1) {
-//            id = types.get(0).getId();
-//        }
-//        BlogQuery blogQuery = new BlogQuery();
-//        blogQuery.setTypeId(id);
-//        model.addAttribute("types", types);
-//        model.addAttribute("page", blogService.listBlog(pageable, blogQuery));
-//        model.addAttribute("activeTypeId", id);
-//        return "types";
-//    }
-//}
+
     @GetMapping("/types")
     public JsonResult types(@PageableDefault(size = 8, direction = Sort.Direction.DESC) Pageable pageable
             , HttpServletResponse response) {
@@ -56,44 +43,21 @@ public class ApiTypeShowController {
             return new JsonResult(200, "fail", Types);
         }
         return new JsonResult(200, "success", Types);
-    }}
-//    @Autowired
-//    private TagService tagService;
-//
-//
-//    @GetMapping("/tags/{id}")
-//    public JsonResult tags(@PageableDefault(size = 8,direction = Sort.Direction.DESC) Pageable pageable,
-//                       @PathVariable Long id, Model model,HttpServletResponse response) {
-//        response.setBufferSize(1024000);
-//        List<Tag> tags = tagService.listTagTop(10000);
-//        if (id == -1) {
-//            id = tags.get(0).getId();
-//        }
-////        model.addAttribute("tags", tags);
-////        model.addAttribute("page", blogService.listBlog(id,pageable));
-////        model.addAttribute("activeTagId", id);
-//        if (tags == null) {
-//            return new JsonResult(200, "fail", tags);
-//        }
-//        return new JsonResult(200, "success",tags);
-//    }
-//
-//    @GetMapping("/types/{id}")
-//    public JsonResult types(@PageableDefault(size = 8, direction = Sort.Direction.DESC) Pageable pageable,
-//                            @PathVariable Long id, Model model,HttpServletResponse response) {
-//        response.setBufferSize(1024000);
-//        List<Type> types = typeService.listTypeTop(10000);
-//        if (id == -1) {
-//            id = types.get(0).getId();
-//        }
-////        BlogQuery blogQuery = new BlogQuery();
-////        blogQuery.setTypeId(id);
-////        model.addAttribute("types", types);
-////        model.addAttribute("page", blogService.listBlog(pageable, blogQuery));
-////        model.addAttribute("activeTypeId", id);
-//        if (types == null) {
-//            return new JsonResult(200, "fail", types);
-//        }
-//        return new JsonResult(200, "success",types);
-//    }
-//}
+    }
+
+
+    @GetMapping("/types/{id}")
+    public JsonResult types(@PageableDefault(size = 8, direction = Sort.Direction.DESC) Pageable pageable,
+                            @PathVariable Long id, Model model, HttpServletResponse response) {
+        response.setBufferSize(1024000);
+        BlogQuery blogQuery = new BlogQuery();
+        blogQuery.setTypeId(id);
+        Page<Blog> blog = blogService.listBlog(pageable, blogQuery);
+        if (blog == null) {
+            return new JsonResult(200, "fail", blog);
+        }
+        return new JsonResult(200, "success", blog);
+    }
+}
+
+

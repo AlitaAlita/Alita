@@ -16,9 +16,3 @@ logging:
   file: log/blog-pro.log
   server:
     port:8081
-
-
-
-
-
-
